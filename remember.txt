@@ -1,0 +1,5 @@
+Remember these things:
+- git status (check status)
+- git add . (. sign means all)
+- git commit -m 'input your message here' (-m means message)
+- git push
