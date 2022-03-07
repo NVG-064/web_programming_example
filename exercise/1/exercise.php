@@ -1,3 +1,23 @@
+<?php
+
+// Koneksi ke DataBase dan Memilih DataBase
+$conn = mysqli_connect('localhost', 'root', '', 'mahasiswa_db');
+
+// Query isi tabel mahasiswa
+$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+
+// Ubah data ke dalam bentuk array
+$row = mysqli_fetch_row($result);
+var_dump($row);
+
+// Tampung ke variabel mahasiswa
+
+
+// 9.27
+// "E:\Saved Pictures\Call of Duty Characters\Ghost 1.jpg"
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,4 +57,3 @@
 </body>
 
 </html>
-//4.55
