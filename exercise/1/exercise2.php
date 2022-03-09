@@ -1,30 +1,11 @@
 <?php
 
-// Koneksi ke DataBase dan Memilih DataBase
-$conn = mysqli_connect('localhost', 'root', '', 'mahasiswa_db');
-
-// Query isi tabel mahasiswa
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
-
-// Ubah data ke dalam bentuk array
-// $row = mysqli_fetch_row($result);      // Array Numerik
-// $row = mysqli_fetch_assoc($result);    // Array Associative
-// $row = mysqli_fetch_array($result);    // Array Numerik dan Associative (keduanya)
-
-// Buat array kosong untuk menampung hasil loop
-$rows = [];
-
-// Lakukan loop untuk menangkap semua data yang ada, selama data itu ada
-while ($row = mysqli_fetch_assoc($result)) {
-  $rows[] = $row; // Menyimpan data hasil penangkapan ke dalam array kosong
-}
-
+require 'functions.php';
 
 // Tampung ke variabel mahasiswa
-$mahasiswa = $rows;
+$mahasiswa = query("SELECT * FROM mahasiswa");
 
-
-// 9.27
+// 17.47
 // "E:\Saved Pictures\Call of Duty Characters\Ghost 1.jpg"
 // Fast link: https://www.youtube.com/playlist?list=PLFIM0718LjIUDMaZfzeF6WjurKhRaL0wo
 ?>
