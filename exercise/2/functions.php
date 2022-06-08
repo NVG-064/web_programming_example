@@ -27,7 +27,7 @@ function query($query)
   return $rows; // Mengembalikan hasil
 }
 
-function add($data)
+function create($data)
 {
   $conn = koneksi();
 

@@ -3,7 +3,7 @@ require 'functions.php';
 
 // Cek apakah tombol tambah sudah ditekan
 if (isset($_POST['tambah'])) {
-  if (add($_POST) > 0)
+  if (create($_POST) > 0)
     echo "<script>
       alert('Data berhasil ditambahkan');
       document.location.href = 'index.php';
