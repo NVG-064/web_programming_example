@@ -84,3 +84,24 @@ function update($data)
 // $row = mysqli_fetch_row($result);      // Array Numerik
 // $row = mysqli_fetch_assoc($result);    // Array Associative
 // $row = mysqli_fetch_array($result);    // Array Numerik dan Associative (keduanya)
+
+function search($keyword)
+{
+  $conn = koneksi();
+
+  $query = "SELECT * FROM mahasiswa WHERE
+              nama LIKE '%$keyword%' OR
+              nrp LIKE '%$keyword%' OR
+              email LIKE '%$keyword%' OR
+              jurusan LIKE '%$keyword%'";
+
+  // Query isi suatu tabel
+  $result = mysqli_query($conn, $query);
+
+  $rows = []; // Buat array kosong untuk menampung hasil loop
+  while ($row = mysqli_fetch_assoc($result)) { // Lakukan loop untuk menangkap semua data yang ada, selama data itu ada
+    $rows[] = $row; // Menyimpan data hasil penangkapan ke dalam array kosong
+  }
+
+  return $rows; // Mengembalikan hasil
+}
